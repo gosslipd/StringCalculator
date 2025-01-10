@@ -15,7 +15,7 @@ namespace StringCalculatorNS
                 return 0;
 
             // Extract the delimiter string from before the list of numbers - creates a default list of delimiters if none provided.
-            ParseAddInputString(ref numbers, out string delimitersString, out string numbersString);
+            ParseAddInputString(numbers, out string delimitersString, out string numbersString);
 
             char[] delimiterChars = delimitersString.ToCharArray();
             string[] valueStrings = numbersString.Split(delimiterChars, StringSplitOptions.RemoveEmptyEntries);
@@ -75,7 +75,7 @@ namespace StringCalculatorNS
         /// @param delimitersString Returns all delimiters as a string.
         /// @param numbersString Returns the list of numbers to add.
         /// @return None.
-        private void ParseAddInputString(ref string numbers, out string delimitersString, out string numbersString)
+        private void ParseAddInputString(string numbers, out string delimitersString, out string numbersString)
         {
             delimitersString = "";
             numbersString = "";
